@@ -1,4 +1,4 @@
-# TẠO VPS VỚI MẠNG RIÊNG NETWORK PRIVATE
+# TẠO VPS VỚI MẠNG RIÊNG (PRIVATE NETWORK)
 
 Kính chào quý khách,
 
@@ -59,7 +59,7 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
 
 ### Bước 6: Khởi Tạo Máy Ảo
 
-- Sau khi bấm nút **Tạo máy ảo mới** thì máy chủ của quý khách đang khởi tạo, quý khách vui lòng chờ đến khi máy chủ khởi tạo hoàn tất. Thời gian tạo mới đối với máy ảo chạy hệ điều hành Windows Server (10 phút) sẽ lâu hơn Linux (3 phút).
+- Sau khi bấm nút **Tạo máy ảo mới** thì máy chủ của quý khách đang khởi tạo, quý khách vui lòng chờ đến khi máy chủ khởi tạo hoàn tất. Thời gian khởi tạo đối với máy ảo chạy hệ điều hành Windows Server (10 phút) sẽ lâu hơn Linux (3 phút).
 
 - Quá trình khởi tạo tất, trang web sẽ tự động chuyển sang trang mới với tất cả thông tin máy chủ quý khách.
 
