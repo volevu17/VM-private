@@ -30,6 +30,7 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
   - Quý khách chọn “ Add new ssh key “.
 
 ### Bước 3: Lựa Chọn Cài Đặt Hệ Điều Hành
+
 - Quý khách chọn từ danh sách hệ điều hành có sẳn. Chúng tôi sẽ liên tục cập nhật các hệ điều hành phổ biến và mới nhất có thể ở danh sách này.
 
 <div align="center">
@@ -43,3 +44,28 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/004.png?raw=true" alt="Demo Image" width="800"/>
 </div>
+
+### Bước 5: Cấu Hình Mạng
+
+- Tại mục **Interface net0** chọn Bridge
+  - **Pri1501 (Private):** để sử dụng mạng nội bộ, để cấp Ip private cho VPS.
+  - **Vmbr1 (Public):** để sử dụng mạng công cộng, để cấp Ip public cho VPS.
+ 
+- Tại hướng dẫn này, để sử dụng mạng nội bộ chọn **Pri1501 (Private):**
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/005.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+### Bước 6: Khởi Tạo Máy Ảo
+
+- Sau khi bấm nút **Tạo máy ảo mới** thì máy chủ của quý khách đang khởi tạo, quý khách vui lòng chờ đến khi máy chủ khởi tạo hoàn tất. Thời gian tạo mới đối với máy ảo chạy hệ điều hành Windows Server (10 phút) sẽ lâu hơn Linux (3 phút).
+
+- Quá trình khởi tạo tất, trang web sẽ tự động chuyển sang trang mới với tất cả thông tin máy chủ quý khách.
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/006.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+- Đến đây máy chủ ảo của quý khách đã tạo xong, quý khách có thể truy cập vào **Console** để sử dụng.
+
