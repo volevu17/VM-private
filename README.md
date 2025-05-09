@@ -145,7 +145,7 @@ Dưới đây là hướng dẫn cách thêm hoặc xoá NIC mạng nội bộ (
 - Mở file cấu hình trong OS
 
 ```bash
-sudo nano /etc/netplan/01-netcfg.yaml
+sudo nano /etc/netplan/50-cloud-init.yaml
 ```
 
 - Tiếp theo gỡ Gateway của card mạng vừa thêm
