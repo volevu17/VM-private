@@ -1,4 +1,4 @@
-# TẠO VPS VỚI NETWORK PRIVATE
+# TẠO VPS VỚI MẠNG RIÊNG NETWORK PRIVATE
 
 Kính chào quý khách,
 
@@ -47,11 +47,11 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
 
 ### Bước 5: Cấu Hình Mạng
 
-- Tại mục **Interface net0** chọn Bridge
+- Tại mục **Interface net0** chọn chế độ Bridge tương ứng:
   - **Pri1501 (Private):** để sử dụng mạng nội bộ, để cấp Ip private cho VPS.
   - **Vmbr1 (Public):** để sử dụng mạng công cộng, để cấp Ip public cho VPS.
  
-- Tại hướng dẫn này, để sử dụng mạng nội bộ chọn **Pri1501 (Private):**
+- Ở hướng dẫn này, chọn **Pri1501 (Private)** để sử dụng mạng riêng nội bộ.
 
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/005.png?raw=true" alt="Demo Image" width="800"/>
@@ -70,11 +70,11 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
 - Đến đây máy chủ ảo của quý khách đã tạo xong, quý khách có thể truy cập vào **Console** để sử dụng.
 
 ----
-# THÊM NIC PRIVATE VÀO MỘT VPS ĐANG SỬ DỤNG
+# THÊM NIC PRIVATE VÀO VPS ĐANG HOẠT ĐỘNG
 
 Kính chào quý khách,
 
-Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private (hoặc xóa NIC Private) máy chủ ảo Cloud VPS. Quý khách vui lòng thực hiện theo các bước sau:
+Dưới đây là hướng dẫn cách thêm hoặc xoá NIC mạng nội bộ (Private NIC) cho VPS đang sử dụng. Quý khách vui lòng thực hiện theo các bước sau:
 
 ### Bước 1: Chọn Máy Ảo Cần Nâng Cấp
 
@@ -84,7 +84,7 @@ Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private
   <img src="https://github.com/volevu17/VM-private/blob/main/007.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
-### Bước 2: Tiến Hành Nâng Cấp
+### Bước 2: Tiến Hành Nâng Cấp Và Thêm Card Mạng
 
 - Đảm bảo máy chủ ở trạng thái OFF, sau đó bấm vào nút **Nâng cấp**
 
@@ -92,10 +92,8 @@ Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private
   <img src="https://github.com/volevu17/VM-private/blob/main/008.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
-- Chọn tab **Mạng**, sau đó chọn **Interfaces**
-
-- Tiếp theo chọn **Thêm card mạng mới**
-
+- Chuyển đến tab Mạng > chọn Interfaces > nhấn **Thêm card mạng mới**.
+  
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/009.png?raw=true" alt="Demo Image" width="800"/>
 </div>
@@ -107,15 +105,15 @@ Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private
   - **Vmbr1 (Public):** để sử dụng mạng công cộng, để cấp Ip public cho VPS.
 - Tại hướng dẫn này, để sử dụng mạng nội bộ chọn **Pri1501 (Private):**
 
-- Tiếp theo quý khách chọn **Assign new IP:** để hệ thống tự động cấp một địa chỉ chỉ IP mới cho NIC. 
+- Tiếp theo quý khách chọn **Assign new IP:** để hệ thống tự động cấp một địa chỉ IP mới cho card mạng vừa thêm. 
 
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/010.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
-- Sau khi chọn **Thêm card mạng mới** thì máy chủ của quý khách đang xử lý, quý khách vui lòng chờ đến khi máy chủ xử lý hoàn tất.
+- Click **Thêm card mạng mới** để hoàn tất. Hệ thống sẽ xử lý và cập nhật cấu hình.
 
-- Sau đó quý khách mở lại máy chủ để kiểm tra lại cấu hình mới và tiếp tục sử dụng:
+- Sau đó, khởi động lại VPS để bắt đầu sử dụng với NIC mới.
 
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/011.png?raw=true" alt="Demo Image" width="800"/>
@@ -123,7 +121,7 @@ Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private
 
 ### Bước 3: Kiểm Tra Bên Trong OS 
 
-- Sau khi VPS được gắn NIC mới, quý khách có thể kiểm tra bên trong OS:
+- Sau khi VPS khởi động lại, quý khách có thể kiểm tra bên trong OS:
 
   - Với Linux thì dùng lệnh: 
 
@@ -139,5 +137,25 @@ Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/012.png?raw=true" alt="Demo Image" width="800"/>
 </div>
+
+### Bước 4: Xóa Gateway khỏi NIC Private
+
+- Khi có 2 card mạng đều thuộc mạng nội bộ (Private), quý khách nên gở một gateway để tránh xung đột định tuyến.
+
+- Mở file cấu hình trong OS
+
+```bash
+sudo nano /etc/netplan/01-netcfg.yaml
+```
+
+- Tiếp theo gỡ Gateway của card mạng vừa thêm
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/013.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+
+
+
 
 
