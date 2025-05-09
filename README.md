@@ -154,7 +154,13 @@ sudo nano /etc/netplan/50-cloud-init.yaml
   <img src="https://github.com/volevu17/VM-private/blob/main/013.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
+- Lưu và áp dụng cấu hình bằng lệnh:
 
+```bash
+sudo netplan apply
+```
+
+Trên đây là toàn bộ hướng dẫn tạo VPS sử dụng mạng nội bộ (private network) và cách thêm NIC private vào máy chủ đang hoạt động. Hy vọng bài viết sẽ giúp quý khách dễ dàng quản lý và mở rộng hệ thống mạng của mình. Kính chúc quý khách sử dụng dịch vụ Cloud VPS tại VNDATA hiệu quả và ổn định.
 
 
 
