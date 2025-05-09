@@ -69,3 +69,75 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
 
 - Đến đây máy chủ ảo của quý khách đã tạo xong, quý khách có thể truy cập vào **Console** để sử dụng.
 
+----
+# THÊM NIC PRIVATE VÀO MỘT VPS ĐANG SỬ DỤNG
+
+Kính chào quý khách,
+
+Sau đây sẽ là hướng dẫn các bước thao tác để thêm NIC Private (hoặc xóa NIC Private) máy chủ ảo Cloud VPS. Quý khách vui lòng thực hiện theo các bước sau:
+
+### Bước 1: Chọn Máy Ảo Cần Nâng Cấp
+
+- Chọn máy ảo cần nâng cấp và tắt máy (shutdown) để đảm bảo an toàn. Quý khách có thể shutdown trực tiếp từ bên trong máy chủ hoặc bấm nút **Tắt nguồn**.
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/007.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+### Bước 2: Tiến Hành Nâng Cấp
+
+- Đảm bảo máy chủ ở trạng thái OFF, sau đó bấm vào nút **Nâng cấp**
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/008.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+- Chọn tab **Mạng**, sau đó chọn **Interfaces**
+
+- Tiếp theo chọn **Thêm card mạng mới**
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/009.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+- Trang web sẽ tự động chuyển sang phần cấu hình **Thêm card mạng** cho VPS.
+
+- Tại mục **Bridge** quý khách có thể lựa chọn.
+  - **Pri1501 (Private):** để sử dụng mạng nội bộ, để cấp Ip private cho VPS.
+  - **Vmbr1 (Public):** để sử dụng mạng công cộng, để cấp Ip public cho VPS.
+- Tại hướng dẫn này, để sử dụng mạng nội bộ chọn **Pri1501 (Private):**
+
+- Tiếp theo quý khách chọn **Assign new IP:** để hệ thống tự động cấp một địa chỉ chỉ IP mới cho NIC. 
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/010.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+- Sau khi chọn **Thêm card mạng mới** thì máy chủ của quý khách đang xử lý, quý khách vui lòng chờ đến khi máy chủ xử lý hoàn tất.
+
+- Sau đó quý khách mở lại máy chủ để kiểm tra lại cấu hình mới và tiếp tục sử dụng:
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/011.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+### Bước 3: Kiểm Tra Bên Trong OS 
+
+- Sau khi VPS được gắn NIC mới, quý khách có thể kiểm tra bên trong OS:
+
+  - Với Linux thì dùng lệnh: 
+
+   ```bash
+    ip a
+   ```
+
+- Với Windows thì dùng lệnh này ở CMD:
+
+```bash
+    ipconfig /all
+   ```
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/012.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+
