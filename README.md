@@ -31,7 +31,7 @@ Các bước hướng dẫn bên dưới được thực hiện sau khi quý kh�
 
 ### Bước 3: Lựa Chọn Cài Đặt Hệ Điều Hành
 
-- Quý khách chọn từ danh sách hệ điều hành có sẳn. Chúng tôi sẽ liên tục cập nhật các hệ điều hành phổ biến và mới nhất có thể ở danh sách này.
+- Quý khách chọn từ danh sách hệ điều hành có sẵn. Chúng tôi sẽ liên tục cập nhật các hệ điều hành phổ biến và mới nhất có thể ở danh sách này.
 
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/003.png?raw=true" alt="Demo Image" width="800"/>
@@ -141,7 +141,7 @@ Dưới đây là hướng dẫn cách thêm hoặc xoá NIC mạng nội bộ (
 ### Bước 4: Xóa Gateway khỏi NIC Private
 
  #### 1. Xóa Gateway khỏi NIC Private ở Linux
-- Khi có 2 card mạng đều thuộc mạng nội bộ (Private), quý khách nên gở một gateway để tránh xung đột định tuyến.
+- Khi có 2 card mạng đều thuộc mạng nội bộ (Private), quý khách nên gỡ một gateway để tránh xung đột định tuyến.
 
 - Mở file cấu hình trong OS
 
@@ -172,7 +172,7 @@ sudo netplan apply
 </div>
 
 - Click chuột chọn **Properties** > Internet Protocol Version 4 (TCP/IPv4)
-- Ở phần Default gateway, hãy xóa giá trị đang có > Nhấn **OK** để lưu
+- Xóa giá trị tại trường **Default Gateway** > Nhấn **OK** để lưu
 
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/015.png?raw=true" alt="Demo Image" width="800"/>
