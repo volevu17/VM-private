@@ -141,7 +141,9 @@ Dưới đây là hướng dẫn cách thêm hoặc xoá NIC mạng nội bộ (
 ### Bước 4: Xóa Gateway khỏi NIC Private
 
  #### 1. Xóa Gateway khỏi NIC Private ở Linux
-- Khi có 2 card mạng đều thuộc mạng nội bộ (Private), quý khách nên gỡ một gateway để tránh xung đột định tuyến.
+ Trường hợp quý khách sử dụng cả mạng Public (vmbr1) và Private (pri1501) trên cùng VPS thì không cần cấu hình gateway cho card Private. Hệ thống sẽ sử dụng Gateway mặc định từ card Public để ra ngoài Internet.
+ 
+ Việc cấu hình gateway cho cả 2 card là không cần thiết và có thể gây lỗi định tuyến, vì vậy nếu hệ thống tự động gán gateway cho NIC private, quý khách vui lòng xóa dòng gateway đó như hướng dẫn bên dưới:
 
 - Mở file cấu hình trong OS
 
