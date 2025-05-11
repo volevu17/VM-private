@@ -119,33 +119,29 @@ Dưới đây là hướng dẫn cách thêm hoặc xoá NIC mạng nội bộ (
   <img src="https://github.com/volevu17/VM-private/blob/main/011.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
-### Bước 3: Kiểm Tra Bên Trong OS 
+### Bước 3: Kiểm Tra Và Cấu Hình NIC Private
 
-- Sau khi VPS khởi động lại, quý khách có thể kiểm tra bên trong OS:
+### Đối với hệ điều hành Linux 
+  ### 1. Kiểm tra địa chỉ IP
 
-  - Với Linux thì dùng lệnh: 
+
+  - Sau khi VPS khởi động lại, quý khách kiểm tra địa chỉ IP đã nhận bằng lệnh:
 
    ```bash
     ip a
    ```
 
-- Với Windows thì dùng lệnh này ở CMD:
-
-```bash
-    ipconfig /all
-   ```
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/012.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
-### Bước 4: Xóa Gateway khỏi NIC Private
-
- #### 1. Xóa Gateway khỏi NIC Private ở Linux
+   ### 2. Xóa Gateway khỏi NIC Private
+   
  Trường hợp quý khách sử dụng cả mạng Public (vmbr1) và Private (pri1501) trên cùng VPS thì không cần cấu hình gateway cho card Private. Hệ thống sẽ sử dụng Gateway mặc định từ card Public để ra ngoài Internet.
  
  Việc cấu hình gateway cho cả 2 card là không cần thiết và có thể gây lỗi định tuyến, vì vậy nếu hệ thống tự động gán gateway cho NIC private, quý khách vui lòng xóa dòng gateway đó như hướng dẫn bên dưới:
 
-- Mở file cấu hình trong OS
+- Mở file cấu hình mạng
 
 ```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
@@ -163,21 +159,38 @@ sudo nano /etc/netplan/50-cloud-init.yaml
 sudo netplan apply
 ```
 
-#### 2. Xóa Gateway khỏi NIC Private ở Windows
+### Đối với hệ điều hành Windows
 
-- Chạy **Run** và nhập dòng lệnh **ncpa.cpl** để vào được *Network Connections*
-  
-- Chọn **Ethernet 2:** Là NIC private vừa được thêm vào
+  ### 1. Kiểm tra địa chỉ IP
 
+  - Sau khi VPS khởi động lại, quý khách mở CMD (Command Prompt) và chạy lệnh sau:
+
+    ```bash
+    ipconfig /all
+    ```
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/014.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
-- Click chuột chọn **Properties** > Internet Protocol Version 4 (TCP/IPv4)
-- Xóa giá trị tại trường **Default Gateway** > Nhấn **OK** để lưu
+ ### 2. Xóa Gateway khỏi NIC Private
+
+ Trường hợp quý khách sử dụng cả mạng Public (vmbr1) và Private (pri1501) trên cùng VPS thì không cần cấu hình gateway cho card Private. Hệ thống sẽ sử dụng Gateway mặc định từ card Public để ra ngoài Internet.
+ 
+ Việc cấu hình gateway cho cả 2 card là không cần thiết và có thể gây lỗi định tuyến, vì vậy nếu hệ thống tự động gán gateway cho NIC private, quý khách vui lòng xóa dòng gateway đó như hướng dẫn bên dưới:
+
+  - Chạy **Run** và nhập dòng lệnh **ncpa.cpl** để vào được *Network Connections*
+  
+  - Chọn **Ethernet 2:** Là NIC private vừa được thêm vào
 
 <div align="center">
   <img src="https://github.com/volevu17/VM-private/blob/main/015.png?raw=true" alt="Demo Image" width="800"/>
+</div>
+
+  - Click chuột chọn **Properties** > Internet Protocol Version 4 (TCP/IPv4)
+  - Xóa giá trị tại trường **Default Gateway** > Nhấn **OK** để lưu
+
+<div align="center">
+  <img src="https://github.com/volevu17/VM-private/blob/main/016.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
 Trên đây là toàn bộ hướng dẫn tạo VPS sử dụng mạng nội bộ (private network) và cách thêm NIC private vào máy chủ đang hoạt động. Hy vọng bài viết sẽ giúp quý khách dễ dàng quản lý và mở rộng hệ thống mạng của mình. Kính chúc quý khách sử dụng dịch vụ Cloud VPS tại VNDATA hiệu quả và ổn định.
