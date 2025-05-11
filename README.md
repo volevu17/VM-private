@@ -161,7 +161,7 @@ sudo netplan apply
 
 ### Đối với hệ điều hành Windows
 
-  ### 1. Kiểm tra địa chỉ IP
+  ## 1. Kiểm tra địa chỉ IP
 
   - Sau khi VPS khởi động lại, quý khách mở CMD (Command Prompt) và chạy lệnh sau:
 
@@ -172,7 +172,7 @@ sudo netplan apply
   <img src="https://github.com/volevu17/VM-private/blob/main/014.png?raw=true" alt="Demo Image" width="800"/>
 </div>
 
- ### 2. Xóa Gateway khỏi NIC Private
+  ## 2. Xóa Gateway khỏi NIC Private
 
  Trường hợp quý khách sử dụng cả mạng Public (vmbr1) và Private (pri1501) trên cùng VPS thì không cần cấu hình gateway cho card Private. Hệ thống sẽ sử dụng Gateway mặc định từ card Public để ra ngoài Internet.
  
